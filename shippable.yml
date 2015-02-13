@@ -10,7 +10,8 @@ env:
   - XUNIT_FILE=shippable/testresults/result.xml
   #beta
   - secure: RWOIX8diQo0IHHNFcQvrT5UrMK5SgqqmoD5BjPKB9zhBCSzwS9ZCupj250CBVKSD2E7B9WuQ1SEEMXdHmIl4BWuwtpRh+VonLIIw/gZ5tBDm6xmKNvDdbmxVBlM/S9j0cbJ4c03PsiNpcZAtf5mmTbYpV/IXwHKk3KYk3ZMpLnk7QoQMoeUWbi+36DRrVSoUO9r12AcwTBYkiLR3UiUvX2EeqvDtWQCMcVYt/UfB7RLZwZAoWY8bhn93uteSsg233XAVy0pSqocfWww0tM3rpc72hQm/1gbiZN+maGACR+qY3GWKrdB5WDgzzDUHhAxYiddWdH1/KPqpb/nSu6fUXg==
-  
+  #prod-collab
+  - secure: YihNZprbqm3DAyE7r6HJlQJeiNXxA8IVaVSVySABzDngq8nRt+xbjHrQkAEsTTZ+Z3KCBDfdh0bTOllxLKvK6eA7Od7uRUWxgzWLL4TvoZzjn2T2PB9jXUDe+h8L3b0M04sapEqYowvmlQvGkGc3Ku2Gsq/nEwcXonUgU6fHW0cNn/t0LyOSudSfXLyYlyWfq9Fqd81TUukk/9i1+Jy1heCEQm23M7aRi5usJaIILphnvqKLvY7T1hi0TrZbJsm30zUB++7hzEdL4FcgMolIPOU9NzI7SkvSql5zqTsqz9ZMnfBs7FPmN5p0QptdbjV3FJFACR42xGms0DqLNt3wtQ==
   
   #Create a DB as part of before script to use it
 # Make folders for the reports, and create the SQL db
@@ -20,6 +21,7 @@ before_script:
   - mkdir -p shippable/src
   - psql -c 'DROP DATABASE IF EXISTS app_test ;' -U postgres -w
   - psql -c 'CREATE DATABASE app_test;' -U postgres
+  - echo $key
   - echo $key1
  
 script:
