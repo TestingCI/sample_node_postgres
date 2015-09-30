@@ -4,6 +4,8 @@ node_js:
   - 0.10
 build_image: shippable/minv2
 
+archive: true
+
 # For xunit-file module to put results in shippable folder
 env:
  global:
